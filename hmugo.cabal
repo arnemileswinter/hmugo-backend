@@ -1,0 +1,112 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hmugo
+version:        0.1.0.0
+synopsis:       A simple cms for managing hugo sites.
+category:       Development
+homepage:       https://github.com/arnemileswinter/hmugo-backend#readme
+bug-reports:    https://github.com/arnemileswinter/hmugo-backend/issues
+maintainer:     Arne Winter
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/arnemileswinter/hmugo-backend
+
+library
+  exposed-modules:
+      Application.JsonTypes
+      Application.Rest
+      Application.RestUtil
+      Domain.Blog
+      Domain.BlogDomain
+      Domain.Domain
+      Domain.Post
+      Domain.PostDomain
+      Domain.Profile
+      Domain.ProfileDomain
+      Env
+      Interpreter.GitHugoInterpreter
+      Interpreter.HugoUtil
+      Interpreter.ParseBlogContent
+      Interpreter.SerializeBlogContent
+  other-modules:
+      Paths_hmugo
+  hs-source-dirs:
+      src/
+  default-extensions:
+      OverloadedStrings
+      NoImplicitPrelude
+      FlexibleContexts
+  ghc-options: -Wall
+  build-depends:
+      HsYAML-aeson
+    , JuicyPixels
+    , aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , base64-bytestring
+    , bytestring
+    , case-insensitive
+    , classy-prelude
+    , directory
+    , frontmatter
+    , http-types
+    , iso8601-time
+    , mtl
+    , process
+    , random
+    , scotty
+    , text
+    , time
+    , transformers
+    , unliftio
+    , unordered-containers
+    , wai
+    , wai-extra
+    , word8
+  default-language: Haskell2010
+
+executable hmugo
+  main-is: Main.hs
+  other-modules:
+      Paths_hmugo
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+      NoImplicitPrelude
+      FlexibleContexts
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HsYAML-aeson
+    , JuicyPixels
+    , aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , base64-bytestring
+    , bytestring
+    , case-insensitive
+    , classy-prelude
+    , directory
+    , frontmatter
+    , hmugo
+    , http-types
+    , iso8601-time
+    , mtl
+    , process
+    , random
+    , scotty
+    , text
+    , time
+    , transformers
+    , unliftio
+    , unordered-containers
+    , wai
+    , wai-extra
+    , word8
+  default-language: Haskell2010

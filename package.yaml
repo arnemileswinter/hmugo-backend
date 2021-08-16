@@ -1,0 +1,54 @@
+name: hmugo
+version: 0.1.0.0
+synopsis: A simple cms for managing hugo sites.
+maintainer: Arne Winter
+github: arnemileswinter/hmugo-backend
+category: Development
+
+default-extensions:
+  - OverloadedStrings
+  - NoImplicitPrelude
+  - FlexibleContexts
+
+dependencies:
+  - base >= 4.7 && < 5
+  - random
+  - mtl
+  - transformers
+  - time
+  - http-types
+  - wai-extra
+  - wai
+  - scotty
+  - text
+  - bytestring
+  - word8
+  - directory
+  - JuicyPixels
+  - classy-prelude
+  - frontmatter
+  - aeson
+  - iso8601-time
+  - process
+  - unordered-containers
+  - HsYAML-aeson
+  - case-insensitive
+  - base64-bytestring
+  - attoparsec
+  - unliftio
+
+ghc-options: -Wall
+
+library:
+    source-dirs: src/
+
+executables:
+  hmugo:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies: 
+      - hmugo
